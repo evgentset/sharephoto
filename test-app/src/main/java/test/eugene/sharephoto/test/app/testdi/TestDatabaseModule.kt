@@ -16,7 +16,7 @@ import test.eugene.sharephoto.domain.PhotoItemRepository
 interface FakeDataModule {
 
     @Binds
-    abstract fun bindRepository(
+    fun bindRepository(
         fakeRepository: FakePhotoItemRepositoryImpl
     ): PhotoItemRepository
 }
