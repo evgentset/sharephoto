@@ -92,7 +92,7 @@ fun PhotoFeedScreen(
                 title = { Text(stringResource(CommonStringR.photo_feed)) },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 )
             )
         },
@@ -194,7 +194,7 @@ fun PhotoFeedContent(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp),
-                    contentAlignment = Alignment.Center
+                    contentAlignment = Alignment.Center,
                 ) {
                     CircularProgressIndicator(
                         modifier = Modifier.size(32.dp)
@@ -239,7 +239,7 @@ fun PhotoItem(
                 .padding(horizontal = 12.dp)
                 .clip(RoundedCornerShape(12.dp))
                 .clickable(onClick = onClick),
-            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         ) {
             SubcomposeAsyncImage(
                 model = photo.downloadUrl,
@@ -255,7 +255,7 @@ fun PhotoItem(
                     Box(Modifier.fillMaxSize()) {
                         CircularProgressIndicator(Modifier.align(Alignment.Center))
                     }
-                }
+                },
             )
         }
 
@@ -264,7 +264,7 @@ fun PhotoItem(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 8.dp),
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Row {
                 // Like button
@@ -274,7 +274,7 @@ fun PhotoItem(
                             if (photo.isLiked) Icons.Filled.Favorite
                             else Icons.Filled.FavoriteBorder,
                         contentDescription = stringResource(CommonStringR.like),
-                        tint = if (photo.isLiked) Color.Red else MaterialTheme.colorScheme.onSurface
+                        tint = if (photo.isLiked) Color.Red else MaterialTheme.colorScheme.onSurface,
                     )
                 }
 
@@ -282,7 +282,7 @@ fun PhotoItem(
                 IconButton(onClick = { /* Open comments */ }) {
                     Icon(
                         imageVector = Icons.Outlined.ChatBubbleOutline,
-                        contentDescription = stringResource(CommonStringR.comment)
+                        contentDescription = stringResource(CommonStringR.comment),
                     )
                 }
 
@@ -290,7 +290,7 @@ fun PhotoItem(
                 IconButton(onClick = { /* Share photo */ }) {
                     Icon(
                         imageVector = Icons.Outlined.IosShare,
-                        contentDescription = stringResource(CommonStringR.share)
+                        contentDescription = stringResource(CommonStringR.share),
                     )
                 }
             }

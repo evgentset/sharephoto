@@ -18,7 +18,7 @@ import javax.inject.Inject
 class PhotoDetailViewModel @Inject constructor(
     private val getPhotoByIdUseCase: GetPhotoByIdUseCase,
     private val toggleLikeUseCase: ToggleLikeUseCase,
-    savedStateHandle: SavedStateHandle
+    savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
 
     private val photoId: String = savedStateHandle[ScreenPhoto.PhotoDetail.PHOTO_ID_ARG] ?: ""
@@ -40,7 +40,7 @@ class PhotoDetailViewModel @Inject constructor(
                     _uiState.update { state ->
                         state.copy(
                             isLoading = false,
-                            photo = photo
+                            photo = photo,
                         )
                     }
                 }
@@ -48,7 +48,7 @@ class PhotoDetailViewModel @Inject constructor(
                     _uiState.update { state ->
                         state.copy(
                             isLoading = false,
-                            error = error.message ?: "Unknown error occurred"
+                            error = error.message ?: "Unknown error occurred",
                         )
                     }
                 }

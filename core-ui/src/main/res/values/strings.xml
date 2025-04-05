@@ -11,4 +11,6 @@
     <string name="photo_by">Photo by %1$s</string>
     <string name="back">Back</string>
     <string name="id_label">"ID: "</string>
+    <string name="photo_details">Photo Details</string>
+    <string name="by">By %1$s</string>
 </resources>

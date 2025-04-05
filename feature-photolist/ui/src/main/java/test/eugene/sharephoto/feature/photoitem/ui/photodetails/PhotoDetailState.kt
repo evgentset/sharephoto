@@ -5,5 +5,5 @@ import test.eugene.sharephoto.core.domain.model.Photo
 data class PhotoDetailState(
     val isLoading: Boolean = false,
     val photo: Photo? = null,
-    val error: String? = null
+    val error: String? = null,
 )

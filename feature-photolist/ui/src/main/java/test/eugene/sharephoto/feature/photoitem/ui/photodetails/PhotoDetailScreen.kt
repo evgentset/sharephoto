@@ -70,18 +70,18 @@ fun PhotoDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Photo Details") },
+                title = { Text(stringResource(CommonStringR.photo_details)) },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = stringResource(CommonStringR.back)
+                            contentDescription = stringResource(CommonStringR.back),
                         )
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
                 )
             )
         },
@@ -100,7 +100,7 @@ fun PhotoDetailScreen(
                 uiState.photo?.let { photo ->
                     PhotoDetailContent(
                         photo = photo,
-                        onLikeClick = { viewModel.toggleLike() }
+                        onLikeClick = { viewModel.toggleLike() },
                     )
                 }
             }
@@ -138,9 +138,9 @@ fun PhotoDetailContent(
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "By ${photo.author}",
+            text = stringResource(CommonStringR.by, photo.author),
             style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
         )
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -153,21 +153,21 @@ fun PhotoDetailContent(
                 Icon(
                     imageVector = if (photo.isLiked) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
                     contentDescription = stringResource(CommonStringR.like),
-                    tint = if (photo.isLiked) Color.Red else MaterialTheme.colorScheme.onSurface
+                    tint = if (photo.isLiked) Color.Red else MaterialTheme.colorScheme.onSurface,
                 )
             }
 
             IconButton(onClick = { /* Open comments */ }) {
                 Icon(
                     imageVector = Icons.Outlined.ChatBubbleOutline,
-                    contentDescription = stringResource(CommonStringR.comment)
+                    contentDescription = stringResource(CommonStringR.comment),
                 )
             }
 
             IconButton(onClick = { /* Share photo */ }) {
                 Icon(
                     imageVector = Icons.Outlined.IosShare,
-                    contentDescription = stringResource(CommonStringR.share)
+                    contentDescription = stringResource(CommonStringR.share),
                 )
             }
         }
@@ -178,11 +178,11 @@ fun PhotoDetailContent(
             Text(
                 text = stringResource(CommonStringR.id_label),
                 style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
             )
             Text(
                 text = photo.id,
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
             )
         }
 
@@ -192,7 +192,7 @@ fun PhotoDetailContent(
             Text(
                 text = stringResource(CommonStringR.dimensions_label),
                 style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
             )
             Text(
                 text = "${photo.width} × ${photo.height}",
@@ -206,7 +206,7 @@ fun PhotoDetailContent(
             Text(
                 text = stringResource(CommonStringR.url_label),
                 style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
             )
             Text(
                 text = photo.url,
