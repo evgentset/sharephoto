@@ -33,6 +33,11 @@ android {
 
 dependencies {
 
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+
     // Arch Components
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "test.eugene.sharephoto.feature.photoitem"
+    namespace = "test.eugene.sharephoto.feature.photo"
     compileSdk = 35
 
     defaultConfig {
@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-data"))
+    implementation(project(":core-domain"))
     implementation(project(":core-ui"))
     implementation(project(":feature-photolist:api"))
     androidTestImplementation(project(":core-testing"))
@@ -51,6 +51,10 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.material.icons.extended)
+    implementation(libs.coil.compose)
+
     // Tooling
     debugImplementation(libs.androidx.compose.ui.tooling)
     // Instrumented tests

@@ -6,8 +6,6 @@ import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Rule
 import org.junit.Test
-import test.eugene.sharephoto.data.fakePhotoItems
-
 import test.eugene.sharephoto.ui.MainActivity
 
 @HiltAndroidTest
@@ -22,6 +20,6 @@ class AppTest {
     @Test
     fun test1() {
         // TODO: Add navigation tests
-        composeTestRule.onNodeWithText(fakePhotoItems.first(), substring = true).assertExists()
+        composeTestRule.onNodeWithText("some text", substring = true).assertExists()
     }
 }

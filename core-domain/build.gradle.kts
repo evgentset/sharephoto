@@ -5,19 +5,20 @@ plugins {
 }
 
 android {
-    namespace = "test.eugene.sharephoto.api"
+    namespace = "test.eugene.sharephoto.core.domain"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 21
 
-        testInstrumentationRunner = "test.eugene.sharephoto.api.testing.HiltTestRunner"
+        testInstrumentationRunner = "test.eugene.sharephoto.core.testing.HiltTestRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
     buildFeatures {
         aidl = false
         renderScript = false
+        shaders = false
     }
 
     compileOptions {
@@ -31,14 +32,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-domain"))
-    implementation(project(":core-data"))
-    implementation(project(":core-database"))
 
-    // Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.logging.interceptor)
 
     // Arch Components
     implementation(libs.hilt.android)

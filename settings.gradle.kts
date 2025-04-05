@@ -16,6 +16,7 @@ dependencyResolutionManagement {
 rootProject.name = "SharePhoto test"
 
 include(":app")
+include(":core-domain")
 include(":core-data")
 include(":core-database")
 include(":core-testing")

@@ -4,20 +4,20 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import test.eugene.sharephoto.data.DefaultPhotoItemRepository
-import test.eugene.sharephoto.domain.PhotoItemRepository
-
+import test.eugene.sharephoto.data.repository.PhotoRepositoryImpl
+import test.eugene.sharephoto.domain.repository.PhotoRepository
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface PhotoListDataModule {
+internal interface PhotoListDataModule {
 
     @Singleton
     @Binds
-    fun bindsPhotoItemRepository(
-        photoItemRepository: DefaultPhotoItemRepository
-    ): PhotoItemRepository
+    fun bindsPhotoRepository(
+        photoRepository: PhotoRepositoryImpl
+    ): PhotoRepository
+
 }
 
 
